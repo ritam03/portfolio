@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritam Pal — Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>RP<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" data-text="About">About</a></li>
+      <li><a href="#skills" data-text="Skills">Skills</a></li>
+      <li><a href="#projects" data-text="Projects">Projects</a></li>
+      <li><a href="#education" data-text="Education">Education</a></li>
+      <li><a href="#certifications" data-text="Certs">Certs</a></li>
+      <li><a href="#contact" data-text="Contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span class="share-tech">Available for Opportunities</span>
+      </div>
+
+      <h1 class="hero-name" id="heroName">
+        <span class="glitch" data-text="RITAM PAL">RITAM PAL</span>
+      </h1>
+
+      <div class="hero-subtitle">
+        <span class="share-tech prefix">_&gt;&nbsp;</span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-desc">
+        M.Tech Integrated Software Engineering student at VIT Vellore.
+        Building real-time, secure, and scalable full-stack applications
+        at the intersection of web, data, and security.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <span>Explore Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1L15 8L8 15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="9.07">0</span>
+          <span class="stat-label">CGPA</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Certs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hex-grid">
+        <div class="hex h1"><span>React</span></div>
+        <div class="hex h2"><span>Node.js</span></div>
+        <div class="hex h3"><span>PostgreSQL</span></div>
+        <div class="hex h4"><span>Socket.io</span></div>
+        <div class="hex h5"><span>Python</span></div>
+        <div class="hex h6"><span>Java</span></div>
+        <div class="hex h7"><span>C++</span></div>
+      </div>
+      <div class="orbit-ring r1"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-ring r3"></div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="share-tech">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">01.</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a <span class="accent-cyan">Software Engineering</span> student at VIT Vellore
+            with a passion for building products that are both technically robust and elegantly designed.
+          </p>
+          <p>
+            My work spans <span class="accent-pink">full-stack web development</span>, real-time systems,
+            and machine learning — particularly in the domain of network security.
+          </p>
+          <p>
+            Beyond code, I'm a <span class="accent-green">Tabla player</span> with a B.Muse degree from
+            Bharatiya Nandanik Parishad — rhythm in music and rhythm in code go hand in hand.
+          </p>
+          <div class="about-links">
+            <a href="https://github.com/ritam03" target="_blank" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/ritampal" target="_blank" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:ritam03pal@gmail.com" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+        <div class="about-card reveal reveal-delay">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title share-tech">ritam@portfolio:~</span>
+            </div>
+            <div class="terminal-body share-tech">
+              <p><span class="cmd-prompt">$</span> cat info.json</p>
+              <p class="out">{</p>
+              <p class="out">&nbsp;&nbsp;<span class="key">"name"</span>: <span class="val">"Ritam Pal"</span>,</p>
+              <p class="out">&nbsp;&nbsp;<span class="key">"role"</span>: <span class="val">"Full-Stack Dev"</span>,</p>
+              <p class="out">&nbsp;&nbsp;<span class="key">"college"</span>: <span class="val">"VIT Vellore"</span>,</p>
+              <p class="out">&nbsp;&nbsp;<span class="key">"cgpa"</span>: <span class="num">9.07</span>,</p>
+              <p class="out">&nbsp;&nbsp;<span class="key">"interests"</span>: [</p>
+              <p class="out">&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"WebDev"</span>, <span class="val">"ML"</span>,</p>
+              <p class="out">&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"Cybersecurity"</span>, <span class="val">"IoT"</span></p>
+              <p class="out">&nbsp;&nbsp;]</p>
+              <p class="out">}</p>
+              <p><span class="cmd-prompt">$</span> <span class="blink-cur">█</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">02.</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <h3 class="cat-title">
+            <span class="cat-icon">⌨</span>
+            Languages
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-skill="C/C++" data-pct="85">
+              <div class="skill-label"><span>C/C++</span><span class="pct">85%</span></div>
+              <div class="bar-bg"><div class="bar-fill" style="--pct:85%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-skill="Java" data-pct="70">
+              <div class="skill-label"><span>Java</span><span class="pct">70%</span></div>
+              <div class="bar-bg"><div class="bar-fill" style="--pct:70%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-skill="JavaScript" data-pct="70">
+              <div class="skill-label"><span>JavaScript</span><span class="pct">70%</span></div>
+              <div class="bar-bg"><div class="bar-fill" style="--pct:70%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-skill="SQL" data-pct="80">
+              <div class="skill-label"><span>SQL</span><span class="pct">80%</span></div>
+              <div class="bar-bg"><div class="bar-fill bar-pink" style="--pct:80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay">
+          <h3 class="cat-title">
+            <span class="cat-icon">🌐</span>
+            Web & Frameworks
+          </h3>
+          <div class="tech-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Socket.io</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Zod</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="cat-title">
+            <span class="cat-icon">🗄</span>
+            Databases
+          </h3>
+          <div class="tech-tags">
+            <span class="tag tag-pink">PostgreSQL</span>
+            <span class="tag tag-pink">MySQL</span>
+            <span class="tag tag-pink">Cloudinary</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay">
+          <h3 class="cat-title">
+            <span class="cat-icon">🛠</span>
+            Tools & Platforms
+          </h3>
+          <div class="tech-tags">
+            <span class="tag tag-green">VS Code</span>
+            <span class="tag tag-green">Postman</span>
+            <span class="tag tag-green">IntelliJ</span>
+            <span class="tag tag-green">Jupyter</span>
+            <span class="tag tag-green">Nmap</span>
+            <span class="tag tag-green">Wireshark</span>
+            <span class="tag tag-green">Selenium</span>
+            <span class="tag tag-green">Scikit-learn</span>
+            <span class="tag tag-green">XGBoost</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">03.</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal" data-tilt>
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🛍</div>
+            <div class="card-links">
+              <a href="https://github.com/ritam03/campus-marketplace" target="_blank" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Campus Marketplace</h3>
+          <p class="card-desc">
+            Secure peer-to-peer marketplace with real-time WebSocket chat, OTP-verified transactions, and full CRUD listings with image uploads.
+          </p>
+          <ul class="card-features">
+            <li>Real-time buyer-seller negotiation via Socket.io</li>
+            <li>JWT auth + bcrypt + Zod validation</li>
+            <li>Cloudinary image storage & Nodemailer OTP</li>
+          </ul>
+          <div class="card-tech">
+            <span>React</span><span>Node.js</span><span>Socket.io</span><span>PostgreSQL</span><span>JWT</span>
+          </div>
+          <div class="card-number share-tech">01</div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay" data-tilt>
+          <div class="card-glow card-glow-pink"></div>
+          <div class="card-header">
+            <div class="card-icon">📋</div>
+            <div class="card-links">
+              <a href="https://github.com/ritam03/task-sync" target="_blank" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">TaskSync</h3>
+          <p class="card-desc">
+            Real-time collaborative project management platform with multi-tenant workspaces, Kanban boards, and audit logging.
+          </p>
+          <ul class="card-features">
+            <li>Role-Based Access Control (RBAC)</li>
+            <li>Optimistic UI updates with real-time sync</li>
+            <li>Detailed audit trail for all user actions</li>
+          </ul>
+          <div class="card-tech">
+            <span>React</span><span>Node.js</span><span>Express</span><span>Socket.io</span><span>PostgreSQL</span>
+          </div>
+          <div class="card-number share-tech">02</div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal" data-tilt>
+          <div class="card-glow card-glow-green"></div>
+          <div class="card-header">
+            <div class="card-icon">🛡</div>
+            <div class="card-links">
+              <a href="https://github.com/ritam03/NeuroGuard-NIDS" target="_blank" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">NeuroGuard – NIDS</h3>
+          <p class="card-desc">
+            Hybrid AI network intrusion detection system combining ML models and a sliding time-window approach to detect complex attacks in real time.
+          </p>
+          <ul class="card-features">
+            <li>Live packet analysis via Scapy</li>
+            <li>NSL-KDD benchmarked ML pipeline</li>
+            <li>Hybrid DoS detection with time-window</li>
+          </ul>
+          <div class="card-tech">
+            <span>Python</span><span>Scapy</span><span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span>
+          </div>
+          <div class="card-number share-tech">03</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">04.</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-meta">
+              <span class="tl-date share-tech">Sep. 2022 – Present</span>
+              <span class="tl-badge badge-cyan">Current</span>
+            </div>
+            <h3 class="tl-title">M.Tech (Integrated) – Software Engineering</h3>
+            <p class="tl-org">Vellore Institute of Technology, Vellore</p>
+            <div class="tl-score">
+              <span class="score-label">CGPA</span>
+              <div class="score-bar">
+                <div class="score-fill" style="--w:90.7%"></div>
+              </div>
+              <span class="score-val">9.07 / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay">
+          <div class="timeline-dot dot-pink"></div>
+          <div class="timeline-content">
+            <div class="tl-meta">
+              <span class="tl-date share-tech">2021</span>
+            </div>
+            <h3 class="tl-title">WBCHSE – Class XII</h3>
+            <p class="tl-org">Raghunathganj High School, West Bengal</p>
+            <div class="tl-score">
+              <span class="score-label">Score</span>
+              <div class="score-bar">
+                <div class="score-fill score-pink" style="--w:95.2%"></div>
+              </div>
+              <span class="score-val">95.2%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot dot-green"></div>
+          <div class="timeline-content">
+            <div class="tl-meta">
+              <span class="tl-date share-tech">2019</span>
+            </div>
+            <h3 class="tl-title">WBBSE – Class X</h3>
+            <p class="tl-org">Raghunathganj High School, West Bengal</p>
+            <div class="tl-score">
+              <span class="score-label">Score</span>
+              <div class="score-bar">
+                <div class="score-fill score-green" style="--w:90.7%"></div>
+              </div>
+              <span class="score-val">90.7%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">05.</span>
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid">
+
+        <a href="https://www.hackerrank.com/profile/ritam03pal" target="_blank" class="cert-card reveal">
+          <div class="cert-badge">★</div>
+          <div class="cert-info">
+            <h4>SQL (Intermediate) + 4-Star SQL Badge</h4>
+            <p>HackerRank</p>
+          </div>
+          <div class="cert-arrow">→</div>
+        </a>
+
+        <a href="https://www.udemy.com/certificate/UC-e5ec2ae9-1315-4ba6-8c0c-8e3f16c214b0/" target="_blank" class="cert-card reveal reveal-delay">
+          <div class="cert-badge cert-pink">⚡</div>
+          <div class="cert-info">
+            <h4>Complete Full-Stack Web Development Bootcamp</h4>
+            <p>Udemy</p>
+          </div>
+          <div class="cert-arrow">→</div>
+        </a>
+
+        <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=93ABD43BCECB13DA6082C1C1B36061273D80E7B0C240867397E7FFB1CF62F160" target="_blank" class="cert-card reveal">
+          <div class="cert-badge cert-green">☁</div>
+          <div class="cert-info">
+            <h4>Oracle Cloud Infrastructure AI Foundations Associate</h4>
+            <p>Oracle</p>
+          </div>
+          <div class="cert-arrow">→</div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1DsN8qIYsjQx57qNluCMj772sq6T8FGW_/view?usp=sharing" target="_blank" class="cert-card reveal reveal-delay">
+          <div class="cert-badge cert-pink">📡</div>
+          <div class="cert-info">
+            <h4>Internet of Things – Value Added Course</h4>
+            <p>SENSE, VIT</p>
+          </div>
+          <div class="cert-arrow">→</div>
+        </a>
+
+      </div>
+
+      <!-- Extracurricular -->
+      <div class="extra-section reveal">
+        <h3 class="extra-title">Extracurricular</h3>
+        <div class="extra-items">
+          <div class="extra-item">
+            <span class="extra-icon">🥁</span>
+            <div>
+              <h4>B.Muse in Tabla</h4>
+              <p>Bharatiya Nandanik Parishad, West Bengal · 2019</p>
+            </div>
+          </div>
+          <div class="extra-item">
+            <span class="extra-icon">🏃</span>
+            <div>
+              <h4>Member – Sports for Healthy Life</h4>
+              <p>VIT Vellore · 2022–2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index share-tech">06.</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrapper reveal">
+        <div class="contact-text">
+          <p>I'm currently open to internships, collaborations, and full-time opportunities. If you have a project in mind or just want to say hi — my inbox is always open.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="mailto:ritam03pal@gmail.com" class="contact-card">
+            <div class="cc-icon">📧</div>
+            <div class="cc-label">Email</div>
+            <div class="cc-val">ritam03pal@gmail.com</div>
+          </a>
+          <a href="tel:+917001256168" class="contact-card">
+            <div class="cc-icon">📱</div>
+            <div class="cc-label">Phone</div>
+            <div class="cc-val">+91 70012 56168</div>
+          </a>
+          <a href="https://linkedin.com/in/ritampal" target="_blank" class="contact-card">
+            <div class="cc-icon">💼</div>
+            <div class="cc-label">LinkedIn</div>
+            <div class="cc-val">linkedin.com/ritampal</div>
+          </a>
+          <a href="https://github.com/ritam03" target="_blank" class="contact-card">
+            <div class="cc-icon">🐙</div>
+            <div class="cc-label">GitHub</div>
+            <div class="cc-val">github.com/ritam03</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <span class="share-tech footer-logo">&lt;RP /&gt;</span>
+      <p>Designed &amp; Built by <span class="accent-cyan">Ritam Pal</span></p>
+      <p class="share-tech footer-copy">© 2025 · Vellore, India</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
